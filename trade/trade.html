@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roster</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+<header>
+    <a href="../menu.html" class="header-menu">
+        <img src="../img/icons8-cardápio-50.png" alt="Menu Hamburguer">
+        Menu
+    </a>
+
+    <h1>Roster</h1>
+
+    <nav class="header-icons">
+        <a href="../perfil.html">
+            <img src="../img/icons8-usuário-homem-com-círculo-24.png" alt="Perfil">
+            Perfil
+        </a>
+        <a href="#">
+            <img src="../img/bell_ring.png" alt="Sino">
+        </a>
+    </nav>
+</header>
+
+    <main class="trade-main">
+        <h2 class="trade-titulo">Oferte a sua jornada</h2>
+        <p class="trade-descricao">Para solicitar essa jornada, descreva abaixo a jornada que voce esta ofertando.</p>
+
+        <section class="trade-secao-oferta">
+            <form class="form-oferta" action="confirmar.html">
+                <p class="form-titulo">Sua jornada ofertada</p>
+                <p class="trade-jornada-selecionada">Jornada selecionada: <strong id="trade-jornada-selecionada">nenhuma</strong></p>
+                <textarea id="jornada-oferta" class="form-textarea" name="jornada-oferta" rows="5" cols="40" placeholder="Exemplo: GRU - GIG - GRU, apresentacao 03:45"></textarea>
+                <button class="btn-confirmar" type="submit">Confirmar solicitacao</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <a class="link-voltar" href="../index.html">
+            <img src="../img/icons8-à-esquerda-dentro-de-um-círculo-24.png" alt="voltar a tela inicial">voltar a tela inicial
+        </a>
+        <p>Copyright © 2026 Roster. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const route = params.get('route') || '';
+        const date = params.get('date') || '';
+        const jornadaTexto = [route, date ? `Dia ${date.split('-').reverse().join('/')}` : '']
+            .filter(Boolean)
+            .join(' | ');
+
+        const label = document.getElementById('trade-jornada-selecionada');
+        const textarea = document.getElementById('jornada-oferta');
+
+        if (jornadaTexto) {
+            if (label) {
+                label.textContent = jornadaTexto;
+            }
+            if (textarea) {
+                textarea.value = jornadaTexto;
+            }
+        }
+    </script>
+</body>
+</html>
