@@ -360,6 +360,12 @@
         showLoadingUI('Carregando Roster...');
         applySkeletonState();
 
+        window.addEventListener('pageshow', function (event) {
+            if (event.persisted) {
+                hideLoadingUI();
+            }
+        });
+
         window.addEventListener('load', function () {
             var elapsed = Date.now() - startTime;
             var delay = Math.max(0, 500 - elapsed);
