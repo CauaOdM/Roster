@@ -7,19 +7,21 @@
     <link rel="stylesheet" href="CSS/reset.css">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
-<body>
+<body class="menu-page">
 
 <nav class="menu-sidebar">
     <h1 class="menu-title">Menu</h1>
     <ul class="menu-list">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="boarding/boarding.html">Boarding</a></li>
-        <li><a href="trade/escolher_pessoa.html">Trade</a></li>
-        <li><a href="LM/lm.html">LM & Slack</a></li>
-        <li><a href="perfil.html">Meu Perfil</a></li>
-        <li><a href="index.html">Sair</a></li>
+        <li><a href="index.html" data-menu-target="index.html">Início</a></li>
+        <li><a href="boarding/boarding.html" data-menu-target="boarding/boarding.html">Boarding</a></li>
+        <li><a href="trade/escolher_pessoa.html" data-menu-target="trade/escolher_pessoa.html">Trade</a></li>
+        <li><a href="LM/lm.html" data-menu-target="LM/lm.html">LM & Slack</a></li>
+        <li><a href="perfil.html" data-menu-target="perfil.html">Meu Perfil</a></li>
+        <li><a href="index.html" data-menu-target="index.html">Sair</a></li>
     </ul>
 </nav>
+
+<script src="JS/roster.js" defer></script>
 
 </body>
 </html>

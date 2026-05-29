@@ -49,25 +49,6 @@
         <p>Copyright © 2026 Roster. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const route = params.get('route') || '';
-        const date = params.get('date') || '';
-        const jornadaTexto = [route, date ? `Dia ${date.split('-').reverse().join('/')}` : '']
-            .filter(Boolean)
-            .join(' | ');
-
-        const label = document.getElementById('trade-jornada-selecionada');
-        const textarea = document.getElementById('jornada-oferta');
-
-        if (jornadaTexto) {
-            if (label) {
-                label.textContent = jornadaTexto;
-            }
-            if (textarea) {
-                textarea.value = jornadaTexto;
-            }
-        }
-    </script>
+    <script src="../JS/roster.js" defer></script>
 </body>
 </html>

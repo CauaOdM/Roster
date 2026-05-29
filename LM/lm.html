@@ -73,7 +73,7 @@
         <label class="label-form">Motivo</label>
  
         <select name="motivo" class="campo-select">
-            <option selected disabled>Selecione...</option>
+            <option value="" selected disabled>Selecione...</option>
             <option>Emergência Familiar</option>
             <option>Doença (Licença Médica)</option>
             <option>Problemas Pessoais</option>
@@ -102,18 +102,7 @@
         <p>Copyright © 2026 Roster. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        // Ajusta padding-top de acordo com a altura do header para evitar sobreposição
-        function adjustContentPadding() {
-            const topo = document.querySelector('header.topo');
-            const conteudo = document.querySelector('main.conteudo');
-            if (!topo || !conteudo) return;
-            const h = topo.getBoundingClientRect().height;
-            conteudo.style.paddingTop = (h + 12) + 'px'; // 12px de folga
-        }
-        window.addEventListener('load', adjustContentPadding);
-        window.addEventListener('resize', adjustContentPadding);
-    </script>
+    <script src="../JS/roster.js" defer></script>
 
 </body>
 </html>
